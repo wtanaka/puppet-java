@@ -37,9 +37,7 @@ class java {
         cwd => "${java::params::java_base}",
         creates => "${java::params::java_base}/jdk${java::params::java_version}",
         alias => "untar-java",
-        refreshonly => true,
-        #onlyif => "test -d ${java::params::java_base}/jdk${java::params::java_version}",
-        subscribe => File["java-source-tgz"],
+        onlyif => "test 0 -eq $(ls -al ${java::params::java_base}/jdk${java::params::java_version} | grep -c bin)",
         before => File["java-app-dir"],
         path    => ["/bin", "/usr/bin", "/usr/sbin"],
         require => File["java-source-tgz"]
