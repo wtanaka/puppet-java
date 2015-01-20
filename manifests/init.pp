@@ -13,6 +13,7 @@ class java {
     }
         
     exec { "download jdk${java::params::java_version}.tar.gz":
+        timeout => 0, # disable timeout
         command => "curl -L '${java::params::jdk_url}' -H 'Cookie: oraclelicense=accept-securebackup-cookie' -o jdk${java::params::java_version}.tar.gz",
         cwd => "${java::params::java_base}",
         alias => "download-java",
