@@ -7,6 +7,10 @@ repos of that module is merged with a pull request to solve that
 problem, its puppet module on forge is not updated accordingly. This
 module is uploaded to solve that.
 
+Building
+
+(cd ..; puppet module build puppet-java)
+
 Usage
 
 Downloading java jdk (tested with jdk1.7.0_03) from Oracle and
