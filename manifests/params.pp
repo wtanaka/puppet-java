@@ -9,6 +9,6 @@ class java::params {
             default     => "/opt/java",
         }
         $jdk_url = $::hostname ? {
-            default => "http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jdk-7u51-linux-x64.tar.gz",
+            default => "http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jdk-7u51-linux-i586.tar.gz",
         }
 }
